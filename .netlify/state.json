@@ -1,0 +1,20 @@
+{
+	"geolocation": {
+		"data": {
+			"city": "Pinto",
+			"country": {
+				"code": "ES",
+				"name": "Spain"
+			},
+			"subdivision": {
+				"code": "MD",
+				"name": "Madrid"
+			},
+			"timezone": "Europe/Madrid",
+			"latitude": 40.235,
+			"longitude": -3.6947,
+			"postalCode": "28320"
+		},
+		"timestamp": 1774524556106
+	}
+}
