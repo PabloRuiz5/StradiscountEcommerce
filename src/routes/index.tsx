@@ -29,19 +29,48 @@ function ProductsIndex() {
       {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-5 py-6">
-          <div className="text-center mb-6 relative">
-            <img src="logo.png" className="adjust"></img>
-            
+
+          {/* Logo row — desktop: cart absolutely positioned right; mobile: stacked */}
+          <div className="relative flex items-center justify-center mb-2">
+            <img src="logo.png" className="adjust" />
+
             <Link
               to="/cart"
-              className="absolute right-0 top-1/2 -translate-y-1/2 flex items-center gap-2 px-4 py-2 text-sm font-medium uppercase tracking-widest border border-gray-300 hover:bg-black hover:text-white hover:border-black transition-colors"
+              className="
+                absolute right-0 top-1/2 -translate-y-1/2
+                flex items-center gap-2 px-4 py-2
+                text-sm font-medium uppercase tracking-widest
+                border border-gray-300
+                hover:bg-black hover:text-white hover:border-black transition-colors
+                hidden sm:flex
+              "
             >
-              Carrito{cartCount > 0 && <span className="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">{cartCount}</span>}
+              Carrito
+              {cartCount > 0 && (
+                <span className="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                  {cartCount}
+                </span>
+              )}
+            </Link>
+          </div>
+
+          {/* Mobile-only cart row — shown below logo, right-aligned, above nav */}
+          <div className="flex justify-end mb-4 sm:hidden">
+            <Link
+              to="/cart"
+              className="flex items-center gap-2 px-4 py-2 text-sm font-medium uppercase tracking-widest border border-gray-300 hover:bg-black hover:text-white hover:border-black transition-colors"
+            >
+              Carrito
+              {cartCount > 0 && (
+                <span className="bg-black text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+                  {cartCount}
+                </span>
+              )}
             </Link>
           </div>
 
           {/* Category Navigation */}
-          <nav className="flex flex-wrap justify-center gap-1 mt-4">
+          <nav className="flex flex-wrap justify-center gap-1">
             {categories.map((cat) => {
               const product = products.find((p) => p.category === cat.slug)
               if (!product) return null
@@ -57,6 +86,7 @@ function ProductsIndex() {
               )
             })}
           </nav>
+
         </div>
       </header>
 
