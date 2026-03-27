@@ -52,7 +52,7 @@ function RouteComponent() {
 
           {/* Logo row — desktop: cart absolutely positioned right; mobile: stacked */}
           <div className="relative flex items-center justify-center mb-2">
-            <img src="logo.png" className="adjust" />
+            <img src="/logo.png" className="adjust" />
 
             <Link
               to="/cart"
